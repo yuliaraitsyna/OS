@@ -4,9 +4,9 @@
 
 using namespace std;
 
-int average, minVal, maxVal, n;
+int averageVal, minVal, maxVal, n;
 
-DWORD WINAPI Min_Max(LPVOID a){
+DWORD WINAPI min_max(LPVOID a){
     int *arr = reinterpret_cast<int*>(a);
     long int max = MININT32;
     long int min = MAXINT32;
@@ -26,7 +26,7 @@ DWORD WINAPI Min_Max(LPVOID a){
     return 0;
 }
 
-DWORD WINAPI Average(LPVOID a){
+DWORD WINAPI average(LPVOID a){
     int *arr = reinterpret_cast<int*>(a);
     int sum = 0;
     for (int i = 0; i < n; i++){
@@ -34,7 +34,7 @@ DWORD WINAPI Average(LPVOID a){
         Sleep(12);
     }
     sum /= n;
-    average = sum;
+    averageVal = sum;
     cout << "Average: " << sum << "\n";
     return 0;
 }
@@ -53,13 +53,13 @@ int main(){
         cout << arr[i] << " ";
     }
     cout << "\n";
-    HANDLE hMinMax = CreateThread(NULL, 0, Min_Max, (void *)arr, 0, NULL);
-    HANDLE hAverage = CreateThread(NULL, 0, Average, (void *)arr, 0, NULL);
+    HANDLE hMinMax = CreateThread(NULL, 0, min_max, (void *)arr, 0, NULL);
+    HANDLE hAverage = CreateThread(NULL, 0, average, (void *)arr, 0, NULL);
     WaitForSingleObject(hMinMax, INFINITE);
     WaitForSingleObject(hAverage, INFINITE);
     for (int i = 0; i < n; i++){
         if (arr[i] == minVal || arr[i] == maxVal){
-            arr[i] = average;
+            arr[i] = averageVal;
         }
     }
     cout << "New array:\n";
