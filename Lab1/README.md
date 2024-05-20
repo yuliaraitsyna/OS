@@ -16,3 +16,5 @@ This program is designed to process employee records stored in a binary file. It
 - Enter employee's info in console
 - Enter output file name using terminal
   
+## Standards
+C++ 17
