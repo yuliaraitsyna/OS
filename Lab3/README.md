@@ -34,3 +34,5 @@ This program is a multi-threaded application written in C++ that demonstrates th
 - **Array Marking**: Marked elements in the array are represented by non-zero values. Each marker thread is identified by a unique ID, and marked elements are assigned the thread ID plus one.
 - **Thread Synchronization**: The program uses mutexes and condition variables for thread synchronization.
 
+## Standards
+C++ 17
