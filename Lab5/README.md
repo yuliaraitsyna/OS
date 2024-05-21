@@ -64,3 +64,6 @@ Each client process performs the following actions:
 3. Execute the client program, specifying the desired number of client processes.
 
 4. Follow the prompts on each client console to perform operations on the employee records file.
+
+## Standards
+C++ 17
