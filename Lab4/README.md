@@ -24,3 +24,6 @@ Requirements for the `Sender` Process:
 - Open the file for sending messages, with the filename obtained from the command line.
 - Send a signal to the Receiver process indicating readiness.
 - Cycle through actions as commanded from the console: send a message to the Receiver process or terminate its own execution.
+
+## Standards
+C++ 17
